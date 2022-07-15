@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpServletResponse;
+
 @Service
 @RequiredArgsConstructor
 public class UrlFacade {
@@ -16,5 +18,10 @@ public class UrlFacade {
     @Transactional
     public Url createUrl(UrlCreate urlCreate) {
         return urlRepository.save(urlCreate);
+    }
+
+    @Transactional
+    public Url redirectToUrl(String shortenedUrl, HttpServletResponse response) {
+        return urlRepository.redirectToUrl(shortenedUrl, response);
     }
 }

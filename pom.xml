@@ -11,11 +11,24 @@
     <groupId>com.sedatbsp</groupId>
     <artifactId>url</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>url</name>
-    <description>Demo project for Spring Boot</description>
+    <name>url-service</name>
+    <description>Auction Shortened Url Service</description>
+
     <properties>
         <java.version>11</java.version>
     </properties>
+
+    <developers>
+        <developer>
+            <id>sedatbsp</id>
+            <name>Sedat Baspinar</name>
+            <email>sdtbsp10@gmail.com</email>
+            <roles>
+                <role>Software Engineer</role>
+            </roles>
+        </developer>
+    </developers>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
