@@ -4,10 +4,12 @@ import com.sedatbsp.url.domain.url.model.Url;
 import com.sedatbsp.url.infrastructure.common.entity.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -24,6 +26,9 @@ public class UrlEntity extends AbstractEntity {
     @Column(name = "description", nullable = false, length = 1000)
     private String description;
 
+    @Column(name = "expiration_date", length = 400)
+    private LocalDateTime expirationDate;
+
     public Url toModel() {
         return Url
                 .builder()
@@ -31,6 +36,7 @@ public class UrlEntity extends AbstractEntity {
                 .url(url)
                 .shortenedUrl(shortenedUrl)
                 .description(description)
+                .expirationDate(expirationDate)
                 .createdAt(getCreatedAt())
                 .updatedAt(getUpdatedAt())
                 .status(getStatus())
