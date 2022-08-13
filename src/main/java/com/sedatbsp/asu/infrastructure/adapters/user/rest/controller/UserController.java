@@ -24,4 +24,5 @@ public class UserController extends BaseController {
         return respond(UserResponse.fromModel(user));
     }
 
+
 }
