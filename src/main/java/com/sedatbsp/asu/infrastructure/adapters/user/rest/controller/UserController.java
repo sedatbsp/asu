@@ -3,7 +3,7 @@ package com.sedatbsp.asu.infrastructure.adapters.user.rest.controller;
 import com.sedatbsp.asu.domain.user.facade.UserFacade;
 import com.sedatbsp.asu.infrastructure.adapters.user.rest.dto.request.UserCreateRequest;
 import com.sedatbsp.asu.infrastructure.adapters.user.rest.dto.response.UserResponse;
-import com.sedatbsp.asu.infrastructure.common.annotation.SecureApiController;
+import com.sedatbsp.asu.infrastructure.common.annotation.ApiController;
 import com.sedatbsp.asu.infrastructure.common.rest.BaseController;
 import com.sedatbsp.asu.infrastructure.common.rest.Response;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.validation.Valid;
 
-@SecureApiController
+@ApiController
 @RequiredArgsConstructor
 public class UserController extends BaseController {
 

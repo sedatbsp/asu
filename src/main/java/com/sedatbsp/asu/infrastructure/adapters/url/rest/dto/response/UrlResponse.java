@@ -1,5 +1,8 @@
 package com.sedatbsp.asu.infrastructure.adapters.url.rest.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.sedatbsp.asu.domain.common.model.Status;
 import com.sedatbsp.asu.domain.url.model.Url;
 import lombok.AllArgsConstructor;
@@ -23,6 +26,8 @@ public class UrlResponse {
 
     private String shortenedUrl;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
     private LocalDateTime expirationDate;
 
     private Status status;

@@ -41,7 +41,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeHttpRequests()
                 .antMatchers("/api/**").permitAll() // login & register pre-path
                 .antMatchers(HttpMethod.GET, "/api-url/").permitAll()
-                .antMatchers(HttpMethod.POST, "/api-url/user").permitAll()
                 .antMatchers(HttpMethod.POST, "/api-url/**").authenticated();
         ;
 

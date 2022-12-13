@@ -38,7 +38,7 @@ public class UrlRepositoryJpaAdapter implements UrlRepository {
     @Override
     public Url redirectToUrl(String shortenedUrl, HttpServletResponse response) {
         var url = urlJpaRepository
-                .findByShortenedUrl(shortenedUrl)
+                .findByShortenedUrlAndStatus(shortenedUrl, Status.ACTIVE)
                 .orElseThrow(() -> new UrlBusinessException(GenericMessages.URL_NOT_FOUND));
 
         try {
