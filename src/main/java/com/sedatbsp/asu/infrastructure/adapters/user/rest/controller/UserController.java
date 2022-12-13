@@ -19,7 +19,7 @@ public class UserController extends BaseController {
     private final UserFacade userFacade;
 
     @PostMapping("user")
-    public Response<?> createUser(@RequestBody @Valid UserCreateRequest userCreateRequest) {
+    public Response<UserResponse> createUser(@RequestBody @Valid UserCreateRequest userCreateRequest) {
         var user = userFacade.createUser(userCreateRequest.toModel(userCreateRequest));
         return respond(UserResponse.fromModel(user));
     }
